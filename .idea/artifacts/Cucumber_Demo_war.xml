@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Cucumber-Demo:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Cucumber-Demo-1.0.0.war">
+      <element id="artifact" artifact-name="Cucumber-Demo:war exploded" />
+    </root>
+  </artifact>
+</component>
