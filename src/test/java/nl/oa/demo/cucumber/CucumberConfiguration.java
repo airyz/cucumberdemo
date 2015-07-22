@@ -1,7 +1,10 @@
 package nl.oa.demo.cucumber;
 
-/**
- * Created by marcdekwant on 20/07/15.
- */
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+
+@Configuration
+@ComponentScan(basePackages = "nl.oa.demo.cucumber.service")
 public class CucumberConfiguration {
 }

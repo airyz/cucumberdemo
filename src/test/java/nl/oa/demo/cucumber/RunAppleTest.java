@@ -1,7 +1,13 @@
 package nl.oa.demo.cucumber;
 
-/**
- * Created by marcdekwant on 20/07/15.
- */
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        format = { "pretty", "html:target/cucumber" },
+        glue = {"nl.oa.demo.cucumber.stepdefinitions"}
+)
 public class RunAppleTest {
 }

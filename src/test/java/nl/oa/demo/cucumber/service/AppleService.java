@@ -1,7 +1,12 @@
 package nl.oa.demo.cucumber.service;
 
-/**
- * Created by marcdekwant on 20/07/15.
- */
-public class AppleService {
+import org.springframework.stereotype.Service;
+
+public interface AppleService {
+
+    boolean hasEnoughApples(int askedAmount);
+
+    void addApples(int amountOfApples);
+
+    int receiveApples(int amountApplesAsked);
 }

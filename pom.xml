@@ -15,6 +15,10 @@
     <cucumber.version>1.2.2</cucumber.version>
   </properties>
 
+  <scm>
+      <url>https://github.com/kwantm/cucumberdemo/</url>
+  </scm>
+
   <build>
       <plugins>
           <plugin>
