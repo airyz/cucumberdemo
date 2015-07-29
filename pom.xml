@@ -10,8 +10,19 @@
   <name>Cucumber-Demo</name>
 
   <properties>
-    <spring.framework>4.2.0.RC1</spring.framework>
-    <cucumber.version>1.2.2</cucumber.version>
+      <commons.lang.version>3.3.2</commons.lang.version>
+      <cucumber.version>1.2.2</cucumber.version>
+      <junit.version>4.12</junit.version>
+      <log4j.version>1.2.17</log4j.version>
+      <lombok.version>1.16.4</lombok.version>
+      <maven.compiler.version>3.0</maven.compiler.version>
+      <maven.compiler.source>1.7</maven.compiler.source>
+      <maven.compiler.target>1.7</maven.compiler.target>
+      <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+      <mockito.version>2.0.2-beta</mockito.version>
+      <sl4j.version>1.5.8</sl4j.version>
+      <spring.framework>4.2.0.RC1</spring.framework>
+      <spring.mock.version>2.0.8</spring.mock.version>
   </properties>
 
   <scm>
@@ -23,11 +34,11 @@
           <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-compiler-plugin</artifactId>
-              <version>3.0</version>
+              <version>${maven.compiler.version}</version>
               <configuration>
-                  <source>1.7</source>
-                  <target>1.7</target>
-                  <encoding>UTF-8</encoding>
+                  <source>${maven.compiler.source}</source>
+                  <target>${maven.compiler.target}</target>
+                  <encoding>${maven.compiler.encoding}</encoding>
               </configuration>
           </plugin>
       </plugins>
@@ -35,9 +46,15 @@
 
   <dependencies>
 
+      <!-- spring dependencies -->
+
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-context</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-tx</artifactId>
       </dependency>
       <dependency>
           <groupId>org.springframework</groupId>
@@ -54,38 +71,42 @@
           <artifactId>spring-beans</artifactId>
       </dependency>
 
+      <!-- Lombok: annotated getters/setters builders etc -->
+
       <dependency>
           <groupId>org.projectlombok</groupId>
           <artifactId>lombok</artifactId>
-          <version>1.16.4</version>
+          <version>${lombok.version}</version>
           <scope>provided</scope>
       </dependency>
 
       <dependency>
           <groupId>org.apache.commons</groupId>
           <artifactId>commons-lang3</artifactId>
-          <version>3.3.2</version>
+          <version>${commons.lang.version}</version>
       </dependency>
+
+      <!-- logging dependencies -->
 
       <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>jcl-over-slf4j</artifactId>
-          <version>1.5.8</version>
+          <version>${sl4j.version}</version>
       </dependency>
       <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-api</artifactId>
-          <version>1.5.8</version>
+          <version>${sl4j.version}</version>
       </dependency>
       <dependency>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-log4j12</artifactId>
-          <version>1.5.8</version>
+          <version>${sl4j.version}</version>
       </dependency>
       <dependency>
           <groupId>log4j</groupId>
           <artifactId>log4j</artifactId>
-          <version>1.2.17</version>
+          <version>${log4j.version}</version>
       </dependency>
 
       <!-- test related dependencies -->
@@ -93,13 +114,14 @@
       <dependency>
           <groupId>junit</groupId>
           <artifactId>junit</artifactId>
-          <version>4.12</version>
+          <version>${junit.version}</version>
+          <scope>test</scope>
       </dependency>
-
       <dependency>
           <groupId>org.mockito</groupId>
           <artifactId>mockito-all</artifactId>
-          <version>2.0.2-beta</version>
+          <version>${mockito.version}</version>
+          <scope>test</scope>
       </dependency>
       <dependency>
           <groupId>org.springframework</groupId>
@@ -109,9 +131,11 @@
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-mock</artifactId>
-          <version>2.0.8</version>
+          <version>${spring.mock.version}</version>
           <scope>test</scope>
       </dependency>
+
+      <!-- cucumber specific dependencies -->
       <dependency>
           <groupId>info.cukes</groupId>
           <artifactId>cucumber-java</artifactId>
@@ -132,7 +156,6 @@
       </dependency>
 
   </dependencies>
-
 
     <dependencyManagement>
         <dependencies>

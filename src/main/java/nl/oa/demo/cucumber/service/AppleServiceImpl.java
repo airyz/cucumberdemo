@@ -21,7 +21,13 @@ public class AppleServiceImpl implements AppleService {
     public int receiveApples(int amountApplesAsked) {
         if (hasEnoughApples(amountApplesAsked)) {
             this.availableApples -= amountApplesAsked;
+            return amountApplesAsked;
         }
-        return amountApplesAsked;
+        return 0;
+    }
+
+    @Override
+    public void setAvailableApples(int amountOfApples) {
+        this.availableApples = amountOfApples;
     }
 }

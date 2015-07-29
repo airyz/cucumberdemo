@@ -1,7 +1,5 @@
 package nl.oa.demo.cucumber.service;
 
-import org.springframework.stereotype.Service;
-
 public interface AppleService {
 
     boolean hasEnoughApples(int askedAmount);
@@ -9,4 +7,6 @@ public interface AppleService {
     void addApples(int amountOfApples);
 
     int receiveApples(int amountApplesAsked);
+
+    void setAvailableApples(int amountOfApples);
 }
